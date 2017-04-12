@@ -15,5 +15,6 @@ for i in channel_all.body['channels']:
     try:
         channel_time[i['id']] = [i['name'],
             slack.channels.history(i['id'], count=1).body['messages'][0]['ts']]
+#handle empty channels    
     except:
         channel_time[i['id']] = [i['name'], 'none']
